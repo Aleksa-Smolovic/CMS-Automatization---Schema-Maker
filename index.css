@@ -1,0 +1,16 @@
+body {
+    background-color: #007f9c;
+}
+
+.entity-card {
+    cursor: grab;
+}
+
+.entity-card:active {
+    cursor: grabbing;
+}
+
+.container-fluid {
+    margin-top: 70px;
+    min-height: 100vh;
+}

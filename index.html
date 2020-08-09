@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS Schema maker</title>
+    <link rel="shortcut icon" href="favicon-32x32.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">CMS automatization - Schema maker</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto"></ul>
+            <button id="add-entity" class="btn btn-lg mr-2 btn-outline-success my-2 my-sm-0" data-toggle="modal"
+                data-target="#exampleModal">Create entity</button>
+            <button class="btn btn-primary btn-lg btn-outline-primary my-2 my-sm-0" id="export">Export schema</button>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+
+        <div class="row" id="container">
+
+        </div>
+
+    </div>
+
+    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Entity</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form id="entity-form" class="entity">
+
+                        <div class="form-group">
+                            <label for="model">Model name</label>
+                            <input type="text" class="form-control" id="model" aria-describedby="modelHelp"
+                                placeholder="Model name">
+                            <small id="modelHelp" class="form-text text-muted">Insert Laravel model name</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="table">Table name</label>
+                            <input type="text" class="form-control" id="table" aria-describedby="tableHelp"
+                                placeholder="Table name">
+                            <small id="tableHelp" class="form-text text-muted">Insert table name</small>
+                        </div>
+
+                        <div id="accordion"></div>
+                        <div id="relationship-accordion"></div>
+                        <input type="hidden" id="timestamp" />
+
+                        <button type="button" id="add-field" class="btn mt-2 btn-alert w-100">Add more fields</button>
+                        <button type="button" id="add-relationship" class="btn mt-2 btn-alert w-100">Add
+                            relationship</button>
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" id="save-entity" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="components.js"></script>
+    <script src="validation.js"></script>
+
+    <script type="text/javascript" src="https://creativecouple.github.io/jquery-timing/jquery-timing.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="jquery.connections.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+
+</body>
+
+</html>
