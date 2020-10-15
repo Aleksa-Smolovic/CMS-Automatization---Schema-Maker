@@ -56,6 +56,7 @@ function getFieldItem(entityId, entityFieldNumber) {
                 <option value="password">Password</option>
                 <option value="number">Number</option>
                 <option value="textarea">Textarea</option>
+                <option value="rich_textarea">Rich textarea</option>
                 <option value="file">File</option>
                 <option value="date">Date</option>
                 <option value="datetime">Datetime</option>

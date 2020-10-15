@@ -2,3 +2,4 @@
 2. Entity self referencing: possibility to fk on itself
 3. Zoom in/out
 4. Enable fk type once generator has the support for it
+5. Foreign key display fields check bug when multiple tables
